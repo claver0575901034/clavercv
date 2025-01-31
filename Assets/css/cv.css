@@ -1,0 +1,233 @@
+/********************** CODE CSS DU CV ************************/
+
+body {
+    
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', serif;
+    background-color: #333;
+    line-height: 1.6;
+}
+
+/* Container principal avec une mise en page en grille */
+.ContainerCv {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+        "ColonneG ColonneD";
+
+    box-shadow: 0 0  14px    #fff;
+    margin-top: 20px;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/***************** COLONNE GAUCHE ********************/
+.divLeft {
+    background-color: rgb(6, 6, 54);
+    grid-area: ColonneG;
+    padding: 20px;
+}
+
+.divLeft ul {
+    padding: 0;
+    margin: 0;
+}
+
+.divLeft ul li {
+    list-style: none;
+}
+
+.divLeft ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.divLeft ul li a:hover {
+    color: rgb(189, 81, 14);
+}
+
+.divLeft p {
+    color: white;
+}
+
+.divLeft h2 {
+    color: rgb(145, 63, 12);
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 2px solid rgb(145, 63, 12);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+em {
+    color: rgb(214, 205, 205);
+}
+
+.Paddingcenter {
+    padding: 20px;
+}
+
+.padding-bottom {
+    padding-bottom: 20px;
+}
+
+/***************** COLONNE DROITE ********************/
+.divRight {
+    background-color: #fff;
+    color: gray;
+    grid-area: ColonneD;
+    padding: 20px;
+}
+
+.divRight .ZONE-NOM {
+    background-color: rgb(189, 81, 14);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.divRight .ZONE-NOM h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.divRight .ZONE-NOM .nom {
+    padding: 0 10px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.experienceP h3, .formation h3 {
+    border: 2px solid rgb(189, 81, 14);
+    color: rgb(189, 81, 14);
+    padding: 8px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.formation-item strong {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.margine-left {
+    margin-left: 30px;
+}
+
+.divRight .text p {
+    text-align: justify;
+}
+
+.PaddingcenterRight {
+    padding: 40px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: rgb(189, 81, 14);
+    border-radius: 5px;
+}
+
+/***************** NAVIGATION HAUT ********************/
+.MenuBasUl {
+    display: flex;
+    justify-content: center;
+    background-color: #222;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    list-style-type: none;
+}
+
+.MenuBasUl li {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.MenuBasUl li a {
+    color: rgb(189, 81, 14);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+  /*  display: block;*/
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.MenuBasUl li a:hover {
+    background-color: rgb(189, 81, 14);
+    color: white;
+}
+
+/***************** BOUTON DOWNLOAD *******************/
+button {
+    background-color: #1890ff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: green;
+   transform: translateY(-2px);
+    font-size: 17px;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/********************** MEDIA QUERIES (RESPONSIVE) **********************/
+
+@media screen and (max-width: 768px) {
+    .ContainerCv {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "ColonneG"
+            "ColonneD";
+    }
+
+    .MenuBasUl {
+        flex-direction: column;
+    }
+
+    .MenuBasUl li {
+        text-align: center;
+    }
+
+    button {
+        width: 90%;
+        max-width: none;
+        margin: 20px auto;
+    }
+}

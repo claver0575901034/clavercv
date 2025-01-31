@@ -1,0 +1,732 @@
+/****************** Corps de la page ******************/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    background-size: 50%;
+}
+
+/****************** Conteneur Principal ******************/
+div.container {
+    border: 1px solid #000;
+    background-color: #000;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr) 4fr 1fr;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 2px;
+    grid-template-areas: 
+        "header header"
+        "nav nav"
+        "ma_photo info_flash"
+        "ma_photo photo_classe_uao"
+        "footer footer";
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 0 20px white;
+    border-radius: 10px;
+}
+
+/****************** HEADER ******************/
+header {
+    background-color: #fff;
+    grid-area: header;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+/*
+.burger {
+    display: none;
+}
+    */
+
+/* Header welcome animation */
+header div.welcomeheader {
+    font-size: 30px;
+}
+
+header div.welcomeheader span.welcome {
+    animation: welcome 4s infinite;
+    letter-spacing: 8px;
+}
+
+@keyframes welcome {
+    0% {
+        color: #333;
+    }
+    55% {
+        box-shadow: #007BFF;
+    }
+    60% {
+        color: green;
+        text-shadow: 0 0 7px black;
+    }
+    65% {
+        border: 1px solid burlywood;
+    }
+    70% {
+        color: orange;
+        text-shadow: 0 0 7px black;
+    }
+    98% {
+        color: white;
+        text-shadow: 0 0 7px black;
+    }
+    100% {
+        color: rgb(35, 3, 81);
+        text-shadow: 0 0 9px black;
+    }
+}
+
+/****************** NAVIGATION ******************/
+nav {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav p {
+    font-size: 16px;
+    color: rgb(0, 179, 255);
+}
+
+nav ul {
+    display: flex;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    transition: 0.6s;
+}
+
+nav ul li a:hover {
+    color: rgb(0, 191, 255);
+    padding: 50px 2px;
+    text-decoration: underline;
+    transition: 0.9s;
+    font-weight: bold;
+}
+
+nav li {
+    text-transform: uppercase;
+    list-style: none;
+    padding: 35px 20px;
+}
+
+nav li a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: white;
+}
+
+.menu3 a img {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+nav {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Rend le nav sticky */
+    top: 0; /* Positionne le nav en haut de la page */
+    z-index: 1000; /* Assure que le nav reste au-dessus des autres éléments */
+    background-color: #000; 
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Légère ombre pour le contraste */
+}
+
+/* Ajout d'une transition de fond pour plus d'effet */
+nav.sticky {
+    background-color: rgba(0, 0, 0, 0.9); /* Fait passer le fond à une couleur semi-transparente */
+    transition: background-color 0.3s;
+}
+
+/****************** MA PHOTO ******************/
+div.ma_photo {
+    background-color: #fff;
+    grid-area: ma_photo;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+div.ma_photo p {
+    text-align: justify;
+    padding: 30px 35px 0px 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(48, 105, 146);
+}
+
+/****************** FLASH INFO ******************/
+div.info_flash {
+    background-image: url(/Assets/Images/flashinfo.jpg);
+    background-repeat: no-repeat;
+    background-size: 160px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    grid-area: info_flash;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.textecarausel {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    animation: roulant 5.2s linear infinite;
+}
+
+@keyframes roulant {
+    0% {
+        transform: translatex(1%);
+    }
+    60% {
+        transform: translatex(95%);
+    }
+}
+
+/****************** PHOTO DIAPO ******************/
+.photo_classe_uao {
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    width: 600px;
+    overflow: hidden;
+    height: 420px;
+    border-radius: 10px;
+}
+
+.caroussel-img {
+    width: 600px;
+    height: 420px;
+}
+
+.images {
+    display: flex;
+    animation-duration: 6s;
+    animation-name: mesImages;
+    animation-iteration-count: infinite;
+}
+
+@keyframes mesImages {
+    0% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-600px);
+    }
+    60% {
+        transform: translateX(-1200px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/****************** FOOTER ******************/
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(178, 172, 172);
+    grid-area: footer;
+    padding: 20px;
+    border-top: 2px solid #fff;
+}
+
+footer p {
+    font-size: 18px;
+    color: rgb(48, 105, 146);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/****************** RESPONSIVENESS ******************/
+
+
+@media (max-width: 768px) {
+    div.container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "ma_photo"
+            "info_flash"
+            "photo_classe_uao"
+            "footer";
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .photo_classe_uao {
+        width: 100%;
+    }
+
+    .caroussel-img {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+/********************************************************  CODE CSS DU FICHIER FORMATION **************************************************/
+
+
+
+
+/* NAV */
+
+
+nav.navFormation{
+    background-color: #333;
+   
+}
+
+
+
+/* Section Formation */
+section#formation {
+    text-align: center;
+    height: 100vh;
+    padding: 30px;
+    background-color: white;
+    margin: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+section ul> li{
+    list-style-type: none;
+}
+
+h2 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 0 7px blue;
+    box-shadow: 0 0 17px mediumaquamarine;
+}
+
+/*****************  ANIMATION  ********************/
+
+
+
+
+.formation-item {
+    
+    position: relative;
+    margin-bottom: 20px;
+    grid-gap:2px;
+
+    -webkit-animation-name: appear;
+    -webkit-animation-duration: 8.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: 8s;
+    -webkit-animation-direction: alternate;
+
+    -moz-animation-name: appear;
+    -moz-animation-duration: 4.5s;
+    -moz-animation-iteration-count: infinite;
+    -mos-animation-timing-function: ease;
+    -moz-animation-delay: 8s;
+    -moz-animation-direction: alternate;
+
+    -o-animation-name: appear;
+    -o-animation-duration: 4.5s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: ease;
+    -o-animation-delay: 4s;
+    -o-animation-direction: alternate;
+
+    animation-name: appear;
+    animation-duration: 6.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 8s;
+    animation-direction: alternate;
+
+
+}
+
+@-webkit-keyframes appear{
+    
+    0%{border: 1px solid red; border-radius: 30px;  }
+    50%{box-shadow: #666;}
+    100%{color: rgb(4, 4, 40); }
+}
+
+@-moz-keyframes appear{
+   
+    0%{border: 1px solid red; border-radius: 30px;  }
+    50%{box-shadow: #666;}
+    100%{color: blue; }
+}
+
+@-o-keyframes appear{
+
+    0%{border: 1px solid red; border-radius: 30px;  }
+    50%{box-shadow: #666;}
+    100%{color: blue; }
+}
+
+@keyframes appear{
+
+    0%{border: 1px solid red; border-radius: 30px;  }
+    50%{box-shadow: #666;}
+    100%{color: rgb(46, 46, 215); }
+}
+
+
+.formation-item:nth-child(1){
+    animation-delay: 1s;
+}
+.formation-item:nth-child(2){
+    animation-delay: 0.5s;
+}
+.formation-item:nth-child(3){
+    animation-delay: 0.1s;
+}
+
+.formation-item:hover{
+ 
+  cursor: pointer;
+  background-color: gray;
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.formation-item h3 {
+    color: #333;
+}
+
+.formation-item p {
+    font-style: italic;
+    color: #666;
+}
+
+.formation-item ul {
+    margin-top: 10px;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.formation-item ul li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Pied de page */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+
+/******************** CODE CSS DE LA PAGE COMPETENCE ET CODE CSS DE LA PAGE EXPERIENCE *********************************/
+
+
+
+body.competence , body.experience {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* En-tête */
+
+
+body.bodycompetence:hover{
+   background-color: rgb(101, 130, 105);
+   transition: 0.8s;
+}
+
+header.competence , header.experience {
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+
+header.competence p, header.experience p {
+    margin: 0;
+    font-size: 16px;
+    color: rgb(0, 179, 255);
+}
+
+
+header.competence ul,header.experience ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+
+header.competence nav ul li,header.experience nav ul li {
+    display: inline;
+    margin: 0 10px;
+    
+}
+
+
+header.competence nav ul li a ,header.experience nav ul li a  {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header.competence nav ul li a:hover ,header.experience nav ul li a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+/* Section Compétences */
+
+
+
+
+section#competences ,section#experience {
+    height: 100vh;
+    padding: 30px;
+    background-color: white;
+    margin: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+section#competences h2 , section#experience h2 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* Sélecteur de catégorie */
+
+
+
+
+#competence-filter, #experience-filter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+/* Sections de compétences */
+
+
+
+.competence-category  {
+    display: none;
+    margin-bottom: 30px;
+}
+
+.experience-category{
+    display: none;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.competence-category h3 , .experience-category h3{
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.competence-item ,.experience-item{
+    margin-bottom: 20px;
+   
+    -webkit-animation-name: order;
+    -webkit-animation-duration: 8.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: 8s;
+    -webkit-animation-direction: alternate;
+
+    -moz-animation-name: order;
+    -moz-animation-duration: 4.5s;
+    -moz-animation-iteration-count: infinite;
+    -mos-animation-timing-function: ease;
+    -moz-animation-delay: 8s;
+    -moz-animation-direction: alternate;
+
+    -o-animation-name: order;
+    -o-animation-duration: 4.5s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: ease;
+    -o-animation-delay: 4s;
+    -o-animation-direction: alternate;
+
+    animation-name: order;
+    animation-duration: 5.5s;
+    animation-iteration-count: inherit;
+    animation-timing-function: ease;
+    animation-delay: 18s;
+    animation-direction: alternate;
+
+}
+
+
+
+@-webkit-keyframes order{
+    
+    0%{ display: none; color: rgb(208, 28, 28);  }
+    15%{display: none; color: rgb(29, 116, 179);}
+    25%{display: none; background-color: antiquewhite; }
+    
+    40%{ display: none; color: rgb(219, 143, 11);  }
+    50%{display: none; color: rgb(144, 12, 98);}
+    100%{display: block; text-shadow: #8f7676; }
+}
+
+@-moz-keyframes order{
+   
+    0%{ display: none; color: rgb(208, 28, 28);  }
+    15%{display: none; color: rgb(29, 116, 179);}
+    25%{display: none; background-color: antiquewhite; }
+    
+    40%{ display: none; color: rgb(219, 143, 11);  }
+    50%{display: none; color: rgb(144, 12, 98);}
+    100%{display: block; text-shadow: #8f7676; }
+}
+
+@-o-keyframes order{
+
+    0%{ display: none; color: rgb(208, 28, 28);  }
+    15%{display: none; color: rgb(29, 116, 179);}
+    25%{display: none; background-color: antiquewhite; }
+    
+    40%{ display: none; color: rgb(219, 143, 11);  }
+    50%{display: none; color: rgb(144, 12, 98);}
+    100%{display: block; text-shadow: #8f7676; }
+}
+
+@keyframes order{
+
+    0%{ display: none; color: rgb(208, 28, 28);  }
+    15%{display: none; color: rgb(29, 116, 179);}
+    25%{display: none; background-color: antiquewhite; }
+    
+    40%{ display: none; color: rgb(219, 143, 11);  }
+    50%{display: none; color: rgb(144, 12, 98);}
+    100%{display: block; text-shadow: #8f7676; }
+    
+}
+
+
+.competence-item :nth-child(1) , .experience-item :nth-child(1){
+    animation-delay: 0.1s;
+    display: block;
+}
+.competence-item:nth-child(2), .experience-item :nth-child(2){
+    animation-delay: 0.2s;
+    display: block;
+   
+}
+.competence-item:nth-child(3) , .experience-item :nth-child(3){
+    animation-delay: 0.3s;
+    display: block;
+    
+}
+.competence-item:nth-child(4), .experience-item :nth-child(4){
+    animation-delay: 0.4s;
+    display: block;
+   
+}
+.competence-item:nth-child(5){
+    animation-delay: 0.5s;
+    display: block;
+    
+}
+.competence-item:nth-child(6){
+    animation-delay: 0.6s;
+    display: block;
+   
+}
+
+
+
+
+#linguistiques ul li strong{
+    font-size: 25px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+/* Pied de page */
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+
+

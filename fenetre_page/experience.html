@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <link rel="stylesheet" href="../Assets/css/style.css">
+   
+</head>
+<body>
+
+    <!-- En-tête du CV -->
+    <header class="experience">
+        <p>KANGA KOUASSI KOUADIO ANDRE CLAVER</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="formation.html">Formation</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="MonCv.html">  MON CV </a></li>
+                <li><a href="http://localhost/Mon_Site_Web/Assets/php/index.php">Etudiants</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section Compétences -->
+    <section id="competences">
+        <h2>Expériences</h2>
+
+        <!-- Sélecteur de catégorie -->
+        <div id="competence-filter">
+            <button class="filter-button" onclick="filterCompetences('techniques')">Expériences</button>
+        </div>
+
+        <!-- Compétences -->
+        <div class="experience-category" id="techniques">
+            
+
+            <div class="experience-item">
+                <p><strong>Développement Web</strong></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <p><strong>Gestion de bases de données</strong></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <p><strong>IU d'un site Web</strong></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <p><strong>Intégration d'une marquètte en HTML et CSS</strong></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Pied de page -->
+    <footer id="contact">
+        <p>&copy; Contactez-moi à : <a href="mailto:exemple@domaine.com">exemple@domaine.com</a></p>
+    </footer>
+
+    <script src="../Assets/js/competence.js"></script>
+</body>
+</html>
